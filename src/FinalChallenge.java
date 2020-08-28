@@ -1,4 +1,3 @@
-
 /*
 
 
@@ -23,13 +22,12 @@ PseudoCode:
 what do we want to achieve?
 
     make a program that can list user entered words and print them, then organize it by alphabetical order, then reverse
+    then capitalize it all.
 
 how are we gonna do it?
 
     need an array
     we need a line of code that makes everything in an array uppercase.
-
-    print all arrays, and our extra line.
 
     refer to "output" above to see what the final product should look like, roughly.
 
