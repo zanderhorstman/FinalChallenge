@@ -1,3 +1,4 @@
+
 /*
 
 
@@ -34,36 +35,41 @@ how are we gonna do it?
     refer to "output" above to see what the final product should look like, roughly.
 
 */
-import java.util.*;
-
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class FinalChallenge {
     public static void main(String[] args) {
-        int max;
-        String userInput = "";                             //Creates string that will store the user's inputs
-        Scanner keybd = new Scanner(System.in);             //new scanner for user inputs
-        System.out.print("Enter words: (Words should be separated by a space ' '): ");
-        userInput = keybd.nextLine();
-        String input[] = userInput.split(" ");
-        List<String> dictionary = new ArrayList<String>(Arrays.asList(input));
-        //dictionary.add(); is usable here
-        System.out.println("Original order: " + dictionary);     //array works, list prints as intended.
-
-        Collections.sort(dictionary);
-
-        System.out.println("Alphabetically sorted order: " + dictionary);
-
-        Collections.sort(dictionary, Collections.reverseOrder());
-
-        System.out.println("Reverse sorted order: " + dictionary);
-
-        for (String str : dictionary) {
-            str.toUpperCase();
-            System.out.println(str);        // this doesnt work here for some reason
+        int numOfWords = 10;
+        String temp;
+        String[] userInput = new String[numOfWords];
+        Scanner keybd = new Scanner(System.in);
+        System.out.println("10 total words will be entered.");
+        for (int i = 0; i < numOfWords; i++) {
+            System.out.print("Please enter word #" + (i + 1) + ": ");
+            userInput[i] = keybd.nextLine();
         }
-        //if (int i = 0; i > max; i++;) {
+        System.out.println("Currently added words:");
+        for (int i = 0; i < numOfWords; i++) {
+            System.out.println(userInput[i]);
+        }
+        System.out.println("\nAlphabetically sorted version: \n");
+        for (int i = 0; i < userInput.length; i++) {
+            for (int j = i + 1; j < userInput.length; j++) {
+                if (userInput[j].compareTo(userInput[i]) < 0) {
+                    temp = userInput[i];
+                    userInput[i] = userInput[j];
+                    userInput[j] = temp;
+                }
+            }
+            System.out.println(userInput[i]);
+        }
 
-        //}
+        for (int i = 0; i > userInput.length; i++) {
+            if (!userInput[i].equals(userInput[i].toUpperCase()));
+                userInput[i] = userInput[i].toUpperCase();
+                System.out.println(userInput[i]);
+        }
+
     }
-
 }
