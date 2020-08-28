@@ -22,12 +22,11 @@ PseudoCode:
 
 what do we want to achieve?
 
-    make a program that can hold and list words in the order that the user enters them, alphabetical order, and reverse.
+    make a program that can list user entered words and print them, then organize it by alphabetical order, then reverse
 
 how are we gonna do it?
 
-    need an array called dictionary, that you can all enter all in one string.
-    we need 2 separate bubble sorting blocks,
+    need an array
     we need a line of code that makes everything in an array uppercase.
 
     print all arrays, and our extra line.
@@ -35,7 +34,6 @@ how are we gonna do it?
     refer to "output" above to see what the final product should look like, roughly.
 
 */
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class FinalChallenge {
@@ -64,7 +62,25 @@ public class FinalChallenge {
             }
             System.out.println(userInput[i]);
         }
-        System.out.println("\nUppercase version of sorted list:\n");
+        System.out.println("\nReverse sorted version: \n");
+
+        for (int i = 0; i < userInput.length; i++) {
+            for (int j = i + 1; j < userInput.length; j++) {
+                if (userInput[i].compareTo(userInput[j]) < 0) {
+                    temp = userInput[i];
+                    userInput[i] = userInput[j];
+                    userInput[j] = temp;
+                }
+            }
+            System.out.println(userInput[i]);
+        }
+        for (int i = 0; i < userInput.length; i++) {
+            System.out.println(userInput[i]);
+        }
+
+
+
+        System.out.println("\nUppercase version of reverse sorted list:\n");
         for (int i = 0; i < userInput.length; i++) {
             if (!userInput[i].equals(userInput[i].toUpperCase()));
                 userInput[i] = userInput[i].toUpperCase();
