@@ -64,8 +64,8 @@ public class FinalChallenge {
             }
             System.out.println(userInput[i]);
         }
-
-        for (int i = 0; i > userInput.length; i++) {
+        System.out.println("\nUppercase version of sorted list:\n");
+        for (int i = 0; i < userInput.length; i++) {
             if (!userInput[i].equals(userInput[i].toUpperCase()));
                 userInput[i] = userInput[i].toUpperCase();
                 System.out.println(userInput[i]);
