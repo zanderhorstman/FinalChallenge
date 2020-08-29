@@ -72,9 +72,6 @@ public class FinalChallenge {
             }
             System.out.println(userInput[i]);
         }
-        for (int i = 0; i < userInput.length; i++) {
-            System.out.println(userInput[i]);
-        }
         System.out.println("\nUppercase version of reverse sorted list:\n");
         for (int i = 0; i < userInput.length; i++) {
             if (!userInput[i].equals(userInput[i].toUpperCase()));
